@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Himanshi ❤️</title>
+    <style>
+        body {
+            /* Changed to a beautiful soft gradient background */
+            background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+            transition: background 0.5s ease;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        h1 {
+            color: #d32f2f;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            min-height: 100px;
+        }
+        button {
+            padding: 15px 35px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        #yesButton {
+            background-color: #ff4081;
+            color: white;
+            position: relative;
+            z-index: 10;
+        }
+        #noButton {
+            background-color: #ffffff;
+            color: #d32f2f;
+            position: absolute;
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="question">Himanshi, will you be my Valentine?</h1>
+        
+        <div class="buttons">
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('noButton');
+        const yesButton = document.getElementById('yesButton');
+        const question = document.getElementById('question');
+
+        // The "Runaway" button logic
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+
+        // When she clicks "Yes"
+        yesButton.addEventListener('click', () => {
+            question.innerHTML = "I Love You! ❤️";
+            // Background changes to a deeper red-pink on success
+            document.body.style.background = "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)";
+            noButton.style.display = 'none'; 
+            yesButton.style.transform = "scale(1.5)";
+            yesButton.style.transition = "transform 0.3s ease";
+        });
+    </script>
+</body>
+</html>
